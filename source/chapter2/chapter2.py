@@ -1,4 +1,3 @@
-from config import config
 import numpy as np
 
 def AND_gate(x1,x2):
