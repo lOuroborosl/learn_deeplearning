@@ -1,31 +1,19 @@
-from chapter1 import chapter1 as cp1
-from chapter2 import chapter2 as cp2
-from chapter3 import chapter3 as cp3
-
+from mnist import mnist
+import neural_network
+import layers
 import numpy as np
-from matplotlib import pyplot as plt
-plt.ion()
+from networks import TwoLayerNet
+
 
 def main():
-    #cp1.np_test()
-    #cp1.plt_test()
-    #cp1.imread_test()
-
-    #cp2.AND_gate(0,1)
-    #cp2.NAND_gate(1,1)
-    #cp2.OR_gate(1,1)
-    #cp2.XOR_gate(0,0)
-
-    #print(cp3.step(np.array([0,1,-1,5,-2])))
-    #cp3.step_draw()
-    #cp3.sigmoid_draw()
-    #cp3.relu_draw()
-    #cp3.all_compare_draw()
-    #print(cp3.process_forward([10,3]))
-    print("a")
-
-
-    #input("Enter to end")
+    mnist_entity=mnist()
+    mnist_entity.init_mnist()
+    (train_img,train_label),(test_img,test_label)=mnist_entity.load_mnist(normalize=False,flatten=True)
+    network=TwoLayerNet(784,784,10)
+    print(network.getLoss(test_img,test_label))
+    print(train_label[5])
+    #mnist_network=neural_network()
+    #mnist_network.test_accuracy(100)
 
 if __name__ == "__main__":
     main()

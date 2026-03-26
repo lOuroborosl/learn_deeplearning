@@ -1,7 +1,7 @@
 import numpy as np
 import pickle
-from MNIST import mnist
-from MNIST.common.functions import sigmoid, softmax
+import mnist
+from common.functions import sigmoid, softmax
 import config.config as config
 
 class neural_network(object):
